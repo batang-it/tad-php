@@ -519,7 +519,8 @@ class TADZKLib
         $u = unpack('S', $this->createChkSum($buf));
 
         if (is_array($u)) {
-            while (list($key) = each($u)) {
+
+            foreach ($u as $key => $value){
                 $u = $u[$key];
                 break;
             }

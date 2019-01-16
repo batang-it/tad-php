@@ -1,3 +1,7 @@
+# Forked version of TAD-PHP by cobisja/tad-php to make it compatible on PHP 7.2.X
+Changes made:
+1. Updated each() function to foreach() function since it is deprecated on PHP 7.2.X
+
 # TAD-PHP
 
 A simple PHP class to interacts with ZK Time & Attendance Devices.
@@ -38,19 +42,19 @@ After download TAD-PHP, you have 2 ways to get your enviroment configured to use
 **TADPHP** is built follows PSR-4 standard and comes with a specific file named **composer.json** that allows **Composer** to generate a file named **autoload.php** (beside others files of course). This files generated is the only one you need to include in your project to get all classes required by TADPHP loaded in memory:
 
 1. Install Composer:
-	```
+  ```
     curl -s https://getcomposer.org/installer | php
-	
-	```
+  
+  ```
 
 2. Get inside TADPHP root folder and generate the **autoload.php** file:
-	```
+  ```
     php composer.phar dump-autoload
     ```
     The command above will generate a folder called **vendor**. Inside of it, you'll see the **autoload.php**
     
 3. Require/Include **autoload.php** file in the **index.php** of your project or whatever file you need to use **TAD-PHP** classes:
-	```php
+  ```php
     <?php
     require 'vendor/autoload.php';
     ...
@@ -66,17 +70,17 @@ Even if Composer it's the preferred method to generate the files needed to get a
 
 3. Require/Include all classes required by TAD-PHP using the relative TAD-PHP path
 
-	```php
+  ```php
     <?php
-	require 'tad/lib/TADFactory.php';
+  require 'tad/lib/TADFactory.php';
     require 'tad/lib/TAD.php';
-	require 'tad/lib/TADResponse.php';
-	require 'tad/lib/Providers/TADSoap.php';
-	require 'tad/lib/Providers/TADZKLib.php';
-	require 'tad/lib/Exceptions/ConnectionError.php';
-	require 'tad/lib/Exceptions/FilterArgumentError.php';
-	require 'tad/lib/Exceptions/UnrecognizedArgument.php';
-	require 'tad/lib/Exceptions/UnrecognizedCommand.php';
+  require 'tad/lib/TADResponse.php';
+  require 'tad/lib/Providers/TADSoap.php';
+  require 'tad/lib/Providers/TADZKLib.php';
+  require 'tad/lib/Exceptions/ConnectionError.php';
+  require 'tad/lib/Exceptions/FilterArgumentError.php';
+  require 'tad/lib/Exceptions/UnrecognizedArgument.php';
+  require 'tad/lib/Exceptions/UnrecognizedCommand.php';
     
     ```
     
